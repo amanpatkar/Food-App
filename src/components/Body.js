@@ -1,15 +1,14 @@
 import RestrantCard from "./RestrantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
-import {Link} from 'react-router-dom'
-
+import { Link } from 'react-router-dom';
 
 const Body = () => {
-  //Local state  var - Super Powerful Var
-
+  // Local state variables
   const [listOfRestraunts, setListOfRestraunts] = useState([]);
-  const [filteredRestraunt,setFilteredRestraunt] = useState([]);
-  const [searchText,setSearchText]  = useState("")
+  const [filteredRestraunt, setFilteredRestraunt] = useState([]);
+  const [searchText, setSearchText] = useState("");
+
   useEffect(() => {
     fetchData();
   }, []);
@@ -22,7 +21,7 @@ const Body = () => {
     const json = await data.json();
     json.data.cards[1]?.["card"]?.["card"]?.["gridElements"]?.["infoWithStyle"]?.["restaurants"]?.map((res) => {
       let obj = {};
-      if(res.info.name != 'Faasos - Wraps, Rolls & Shawarma'){
+      if (res.info.name !== 'Faasos - Wraps, Rolls & Shawarma') {
         obj["id"] = res.info.id;
         obj["resName"] = res.info.name;
         obj["cuisines"] = res.info.cuisines;
@@ -36,42 +35,64 @@ const Body = () => {
     setListOfRestraunts(reqData);
     setFilteredRestraunt(reqData);
   };
-  return listOfRestraunts.length == 0 ? (<Shimmer/>) : (
+
+  return listOfRestraunts.length === 0 ? (
+    <Shimmer />
+  ) : (
     <div className="body">
       <div className="filter">
-        <div className="search-container">
-        <input className = "search-box" value ={searchText} onChange = {(e)=>setSearchText(e.target.value)}type="text"></input>
-          <button className="btn-search" onClick={()=>{
-            const searchTextToLowerCase = searchText.toLowerCase();
-            const filteredList = listOfRestraunts.filter((res)=>res.resName?.toLowerCase()?.includes(searchTextToLowerCase));
-            setFilteredRestraunt(filteredList);
-          }}>Search</button>
+        <div className="search-container d-flex">
+          <input
+            className="search-box form-control m-3 "
+            value={searchText}
+            onChange={(e) => setSearchText(e.target.value)}
+            type="text"
+          />
+          <button
+            className="btn-search btn btn-outline-success m-3"
+            onClick={() => {
+              const searchTextToLowerCase = searchText.toLowerCase();
+              const filteredList = listOfRestraunts.filter((res) =>
+                res.resName?.toLowerCase()?.includes(searchTextToLowerCase)
+              );
+              setFilteredRestraunt(filteredList);
+            }}
+          >
+            Search
+          </button>
         </div>
         <button
-          className="filter-btn"
+          className="filter-btn btn btn-outline-primary m-3"
           onClick={() => {
-            //Filter logic
             const filteredList = listOfRestraunts.filter(
               (res) => res.avgRating > 4.5
             );
             setFilteredRestraunt(filteredList);
           }}
         >
-          Top Rated Restraunts
+          Top Rated Restaurants
         </button>
-        <button className="reset-btn"
-          onClick={() => setFilteredRestraunt(listOfRestraunts)}>
+        <button
+          className="reset-btn btn btn-outline-danger m-3"
+          onClick={() => setFilteredRestraunt(listOfRestraunts)}
+        >
           Reset List
         </button>
       </div>
-      <div className="res-container">
-        {/* Retraunt-Cards */}
+      <div className="res-container row m-4">
+        {/* Restaurant Cards */}
         {filteredRestraunt.map((res) => {
-          return <Link key={res.id} to={'/restraunt/' + res.id}><RestrantCard resData={res} /></Link>;
+          return (
+            <div className="col-12 col-sm-6 col-md-4 col-lg-3 mb-4" key={res.id}>
+              <Link to={'/restraunt/' + res.id} className="text-decoration-none">
+                <RestrantCard resData={res}/>
+              </Link>
+            </div>
+          );
         })}
       </div>
     </div>
-  ) 
-
+  );
 };
+
 export default Body;

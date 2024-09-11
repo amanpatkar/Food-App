@@ -27357,6 +27357,7 @@ const Header = ()=>{
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "nav-items",
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
+                    className: "parentlist",
                     children: [
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
@@ -27398,20 +27399,6 @@ const Header = ()=>{
                         }, void 0, false, {
                             fileName: "src/components/Header.js",
                             lineNumber: 21,
-                            columnNumber: 11
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                                to: "/cart",
-                                children: "Cart"
-                            }, void 0, false, {
-                                fileName: "src/components/Header.js",
-                                lineNumber: 22,
-                                columnNumber: 15
-                            }, undefined)
-                        }, void 0, false, {
-                            fileName: "src/components/Header.js",
-                            lineNumber: 22,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -34706,7 +34693,7 @@ var _reactRouterDom = require("react-router-dom");
 var _s = $RefreshSig$();
 const Body = ()=>{
     _s();
-    //Local state  var - Super Powerful Var
+    // Local state variables
     const [listOfRestraunts, setListOfRestraunts] = (0, _react.useState)([]);
     const [filteredRestraunt, setFilteredRestraunt] = (0, _react.useState)([]);
     const [searchText, setSearchText] = (0, _react.useState)("");
@@ -34719,7 +34706,7 @@ const Body = ()=>{
         const json = await data.json();
         json.data.cards[1]?.["card"]?.["card"]?.["gridElements"]?.["infoWithStyle"]?.["restaurants"]?.map((res)=>{
             let obj = {};
-            if (res.info.name != "Faasos - Wraps, Rolls & Shawarma") {
+            if (res.info.name !== "Faasos - Wraps, Rolls & Shawarma") {
                 obj["id"] = res.info.id;
                 obj["resName"] = res.info.name;
                 obj["cuisines"] = res.info.cuisines;
@@ -34733,10 +34720,10 @@ const Body = ()=>{
         setListOfRestraunts(reqData);
         setFilteredRestraunt(reqData);
     };
-    return listOfRestraunts.length == 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerDefault.default), {}, void 0, false, {
+    return listOfRestraunts.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerDefault.default), {}, void 0, false, {
         fileName: "src/components/Body.js",
-        lineNumber: 39,
-        columnNumber: 42
+        lineNumber: 40,
+        columnNumber: 5
     }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "body",
         children: [
@@ -34744,20 +34731,20 @@ const Body = ()=>{
                 className: "filter",
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "search-container",
+                        className: "search-container d-flex",
                         children: [
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                                className: "search-box",
+                                className: "search-box form-control m-3 ",
                                 value: searchText,
                                 onChange: (e)=>setSearchText(e.target.value),
                                 type: "text"
                             }, void 0, false, {
                                 fileName: "src/components/Body.js",
-                                lineNumber: 43,
-                                columnNumber: 9
+                                lineNumber: 45,
+                                columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                                className: "btn-search",
+                                className: "btn-search btn btn-outline-success m-3",
                                 onClick: ()=>{
                                     const searchTextToLowerCase = searchText.toLowerCase();
                                     const filteredList = listOfRestraunts.filter((res)=>res.resName?.toLowerCase()?.includes(searchTextToLowerCase));
@@ -34766,74 +34753,81 @@ const Body = ()=>{
                                 children: "Search"
                             }, void 0, false, {
                                 fileName: "src/components/Body.js",
-                                lineNumber: 44,
+                                lineNumber: 51,
                                 columnNumber: 11
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/Body.js",
-                        lineNumber: 42,
+                        lineNumber: 44,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                        className: "filter-btn",
+                        className: "filter-btn btn btn-outline-primary m-3",
                         onClick: ()=>{
-                            //Filter logic
                             const filteredList = listOfRestraunts.filter((res)=>res.avgRating > 4.5);
                             setFilteredRestraunt(filteredList);
                         },
-                        children: "Top Rated Restraunts"
+                        children: "Top Rated Restaurants"
                     }, void 0, false, {
                         fileName: "src/components/Body.js",
-                        lineNumber: 50,
+                        lineNumber: 64,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                        className: "reset-btn",
+                        className: "reset-btn btn btn-outline-danger m-3",
                         onClick: ()=>setFilteredRestraunt(listOfRestraunts),
                         children: "Reset List"
                     }, void 0, false, {
                         fileName: "src/components/Body.js",
-                        lineNumber: 62,
+                        lineNumber: 75,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/Body.js",
-                lineNumber: 41,
+                lineNumber: 43,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "res-container",
+                className: "res-container row m-4",
                 children: filteredRestraunt.map((res)=>{
-                    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                        to: "/restraunt/" + res.id,
-                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _restrantCardDefault.default), {
-                            resData: res
+                    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "col-12 col-sm-6 col-md-4 col-lg-3 mb-4",
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                            to: "/restraunt/" + res.id,
+                            className: "text-decoration-none",
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _restrantCardDefault.default), {
+                                resData: res
+                            }, void 0, false, {
+                                fileName: "src/components/Body.js",
+                                lineNumber: 88,
+                                columnNumber: 17
+                            }, undefined)
                         }, void 0, false, {
                             fileName: "src/components/Body.js",
-                            lineNumber: 70,
-                            columnNumber: 65
+                            lineNumber: 87,
+                            columnNumber: 15
                         }, undefined)
                     }, res.id, false, {
                         fileName: "src/components/Body.js",
-                        lineNumber: 70,
-                        columnNumber: 18
+                        lineNumber: 86,
+                        columnNumber: 13
                     }, undefined);
                 })
             }, void 0, false, {
                 fileName: "src/components/Body.js",
-                lineNumber: 67,
+                lineNumber: 82,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/Body.js",
-        lineNumber: 40,
+        lineNumber: 42,
         columnNumber: 5
     }, undefined);
 };
-_s(Body, "8A+Lq+uD84Ur1EWi3UvVjSt0INk=");
+_s(Body, "OykdoMFm2Tnl2YjAwXbgoGZrXTw=");
 _c = Body;
 exports.default = Body;
 var _c;
@@ -34857,74 +34851,104 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _constants = require("../utils/constants");
 const RestrantCard = (props)=>{
     const { resName, cuisines, avgRating, deliveryTime, costForTwo, img_id } = props.resData;
+    console.log("costForTwo", costForTwo);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "res-card",
+        className: "card h-100",
         style: {
             backgroundColor: "#f0f0f0"
         },
         children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                className: "card-img-top",
+                src: (0, _constants.CDN_URL) + img_id,
+                alt: resName,
+                style: {
+                    height: "200px",
+                    objectFit: "cover"
+                }
+            }, void 0, false, {
+                fileName: "src/components/RestrantCard.js",
+                lineNumber: 9,
+                columnNumber: 7
+            }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "res-logo-container",
-                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                    className: "res-logo",
-                    src: (0, _constants.CDN_URL) + img_id
-                }, void 0, false, {
-                    fileName: "src/components/RestrantCard.js",
-                    lineNumber: 8,
-                    columnNumber: 11
-                }, undefined)
-            }, void 0, false, {
-                fileName: "src/components/RestrantCard.js",
-                lineNumber: 7,
-                columnNumber: 9
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-                children: resName
-            }, void 0, false, {
-                fileName: "src/components/RestrantCard.js",
-                lineNumber: 13,
-                columnNumber: 9
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
-                children: cuisines.join(", ")
-            }, void 0, false, {
-                fileName: "src/components/RestrantCard.js",
-                lineNumber: 14,
-                columnNumber: 9
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
+                className: "card-body",
                 children: [
-                    "Rating: ",
-                    avgRating
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h5", {
+                        className: "card-title",
+                        children: resName
+                    }, void 0, false, {
+                        fileName: "src/components/RestrantCard.js",
+                        lineNumber: 18,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                        className: "card-text",
+                        children: cuisines.join(", ")
+                    }, void 0, false, {
+                        fileName: "src/components/RestrantCard.js",
+                        lineNumber: 19,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                        className: "card-text",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("strong", {
+                                children: "Rating:"
+                            }, void 0, false, {
+                                fileName: "src/components/RestrantCard.js",
+                                lineNumber: 23,
+                                columnNumber: 11
+                            }, undefined),
+                            " ",
+                            avgRating,
+                            " ",
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
+                                fileName: "src/components/RestrantCard.js",
+                                lineNumber: 23,
+                                columnNumber: 48
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("strong", {
+                                children: "Delivery Time:"
+                            }, void 0, false, {
+                                fileName: "src/components/RestrantCard.js",
+                                lineNumber: 24,
+                                columnNumber: 11
+                            }, undefined),
+                            " ",
+                            deliveryTime,
+                            " minutes ",
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
+                                fileName: "src/components/RestrantCard.js",
+                                lineNumber: 24,
+                                columnNumber: 66
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("strong", {
+                                children: "Cost for Two:"
+                            }, void 0, false, {
+                                fileName: "src/components/RestrantCard.js",
+                                lineNumber: 25,
+                                columnNumber: 11
+                            }, undefined),
+                            " \u20B9",
+                            Number(costForTwo?.split("for")[0]?.split("\u20B9")[1]) / 100
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/RestrantCard.js",
+                        lineNumber: 22,
+                        columnNumber: 9
+                    }, undefined)
                 ]
             }, void 0, true, {
-                fileName: "src/components/RestrantCard.js",
-                lineNumber: 15,
-                columnNumber: 9
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
-                children: [
-                    "Delivery Time: ",
-                    deliveryTime,
-                    " minutes"
-                ]
-            }, void 0, true, {
-                fileName: "src/components/RestrantCard.js",
-                lineNumber: 16,
-                columnNumber: 9
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
-                children: costForTwo
-            }, void 0, false, {
                 fileName: "src/components/RestrantCard.js",
                 lineNumber: 17,
-                columnNumber: 9
+                columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/RestrantCard.js",
-        lineNumber: 6,
-        columnNumber: 7
+        lineNumber: 7,
+        columnNumber: 5
     }, undefined);
 };
 _c = RestrantCard;

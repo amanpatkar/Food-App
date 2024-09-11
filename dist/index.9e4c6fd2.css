@@ -1,5 +1,7 @@
 .header {
+  background-color: #2f4f4f;
   border: 1px solid #000;
+  border-radius: 10px;
   justify-content: space-between;
   display: flex;
 }
@@ -65,10 +67,96 @@
 
 .btn-login {
   cursor: pointer;
-  margin: 20px;
 }
 
 .filter {
   display: flex;
+}
+
+.nav-items > ul > li > a {
+  color: #fff;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serif;
+  text-decoration: none;
+}
+
+.btn-login {
+  color: #fff;
+  box-shadow: #f0f0f0;
+  background-color: #e94242;
+  border: none;
+  border-radius: 10px;
+  width: 60px;
+  height: 30px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+@media (width <= 768px) {
+  .header {
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .logo {
+    margin-bottom: 20px;
+  }
+
+  .nav-items > ul {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    padding: 0;
+    display: flex;
+  }
+
+  .nav-items > ul > li {
+    margin: 5px 0;
+    padding: 5px 0;
+    font-size: 18px;
+  }
+
+  .btn-login {
+    text-align: center;
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+
+@media (width <= 480px) {
+  .logo {
+    width: 80px;
+  }
+
+  .nav-items > ul > li {
+    font-size: 16px;
+    display: flex;
+  }
+
+  .btn-login {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .nav-items > ul {
+    padding: 0;
+  }
+}
+
+.parentlist {
+  justify-content: center;
+  align-items: center;
+  padding: 2px;
+  display: flex;
+}
+
+.nav-items {
+  justify-content: center;
+  align-items: center;
+  padding-right: 8px;
+  display: flex;
+}
+
+.search-container {
+  width: 72%;
 }
 /*# sourceMappingURL=index.9e4c6fd2.css.map */

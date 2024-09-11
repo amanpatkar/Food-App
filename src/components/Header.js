@@ -15,11 +15,11 @@ const Header = () => {
         <img className="logo" src={LOGO_URL}></img>
       </div>
       <div className="nav-items">
-        <ul>
+        <ul className="parentlist">
           <li><Link to = '/'>Home</Link></li>
           <li><Link to = '/about'>About Us</Link></li>
           <li><Link to = '/contact'>Contact Us</Link></li>
-          <li><Link to = '/cart'>Cart</Link></li>
+          {/* <li><Link to = '/cart'>Cart</Link></li> */}
           <button
             onClick={() => {
               const status = btnNameReact == "Login" ? "Logout" : "Login";
