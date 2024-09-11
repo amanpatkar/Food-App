@@ -1,0 +1,35 @@
+{
+  "name": "practice-react-app",
+  "version": "1.0.0",
+  "description": "This is practice-react-app by Kanishk",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KanishkPant98/practice-react-app.git"
+  },
+  "keywords": [
+    "practice-react-app"
+  ],
+  "author": "Kanishk Pant",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KanishkPant98/practice-react-app/issues"
+  },
+  "homepage": "https://github.com/KanishkPant98/practice-react-app#readme",
+  "devDependencies": {
+    "parcel": "^2.12.0",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.24.1"
+  },
+  "browserslist": [
+    "last 2 versions"
+  ]
+}

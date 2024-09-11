@@ -1,0 +1,74 @@
+.header {
+  border: 1px solid #000;
+  justify-content: space-between;
+  display: flex;
+}
+
+.logo {
+  width: 100px;
+}
+
+.nav-items > ul {
+  display: flex;
+}
+
+.nav-items > ul > li {
+  margin: 10px;
+  padding: 10px;
+  font-size: 24px;
+  list-style-type: none;
+}
+
+.filter {
+  margin: 10px;
+  padding: 10px;
+
+  & .filter-btn {
+    cursor: pointer;
+  }
+}
+
+.res-container {
+  flex-wrap: wrap;
+  display: flex;
+}
+
+.res-card {
+  cursor: pointer;
+  width: 200px;
+  height: 300px;
+  margin: 10px;
+  padding: 10px;
+}
+
+.res-card:hover {
+  border: 1px solid #000;
+}
+
+.res-logo-container > .res-logo {
+  width: 190px;
+  height: 100px;
+  padding: 5px;
+}
+
+.shimmer-container {
+  flex-wrap: wrap;
+  display: flex;
+}
+
+.shimmer-card {
+  background-color: #f0f0f0;
+  width: 200px;
+  height: 300px;
+  margin: 20px;
+}
+
+.btn-login {
+  cursor: pointer;
+  margin: 20px;
+}
+
+.filter {
+  display: flex;
+}
+/*# sourceMappingURL=index.9e4c6fd2.css.map */
