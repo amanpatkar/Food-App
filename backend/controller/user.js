@@ -5,12 +5,16 @@ const User = require('../models/user')
 
 
 exports.createUser = (req,res,next) =>{
+    console.log(req.body)
     bcrypt.hash(req.body.password, 10).then(hash =>{
 
         const user = new User({
             full_name:req.body.full_name,
             email:req.body.email,
-            password:hash
+            password:hash,
+            role:req.body.role,
+            location:req.body.location,
+            restaurantName:req.body.restaurantName
         })
         user.save().then(result =>{
             res.status(201).json({

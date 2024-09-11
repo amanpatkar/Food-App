@@ -4,6 +4,9 @@ const userSchema = mongoose.Schema({
     full_name:{type:String , required:true},
     email: {type:String, required:true, unique:true},
     password: {type:String , required:true},
+    role:{type:String, required:true},
+    location:{type:String, required:true},
+    restaurantName:{type:String, required:true}
 });
 userSchema.plugin(uniqueValidator);
 module.exports = mongoose.model('User',userSchema);
