@@ -7,10 +7,11 @@ import About from "./components/About.js";
 import Contact from "./components/Contact.js";
 import Error from "./components/Error.js";
 import Cart from "./components/Cart.js";
-import RestrauntMenu from "./components/RestrauntMenu.js";
+// import RestrauntMenu from "./components/RestrauntMenu.js";
 
 
 import {createBrowserRouter,RouterProvider,Outlet} from "react-router-dom"
+import ProductDetails from "./components/productDetails.js";
 
 const AppLayout = () => {
   return (
@@ -45,7 +46,7 @@ const appRouter = createBrowserRouter([
       },
       {
         path: '/restraunt/:resId',
-        element: <RestrauntMenu/>
+        element: <ProductDetails/>
       }
     ]
   },

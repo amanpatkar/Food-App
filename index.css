@@ -149,3 +149,15 @@
 .search-container{
     width: 72%;
 }
+.rating{
+    color: rgb(255, 128, 0);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 21px;
+    margin-left: 4px;
+    margin-top: 2px;
+}
+
+.parentCart{
+    width: 134.21px;
+}
