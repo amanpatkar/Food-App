@@ -90,7 +90,7 @@ const Body = () => {
           return (
             <div className="col-12 col-sm-6 col-md-4 col-lg-3 mb-4" key={res.id}>
               <Link to={'/restraunt/' + res.id} className="text-decoration-none">
-                <RestrantCard resData={res} />
+                <RestrantCard resData={res} component={ProductDetails}/>
               </Link>
             </div>
           );
