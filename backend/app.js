@@ -13,6 +13,7 @@ app.use(cors());
 
 // const postRoute = require('./routes/post');
 const userRoute = require('./routes/user');
+const productRoute = require('./routes/product');
 
 const uri = 'mongodb+srv://admin:admin@cluster0.tcrln.mongodb.net/food-app';
 
@@ -38,6 +39,7 @@ app.use((req, res, next) => {
 });
 
 // app.use('/api/posts', postRoute);
+app.use('/api/product',productRoute);
 app.use('/api/user', userRoute);
 app.use(authMiddleware);
 

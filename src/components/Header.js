@@ -21,8 +21,8 @@ const Header = () => {
           <li><Link to = '/contact'>Contact Us</Link></li>
           <li><Link to = '/cart'>
             <img src="" height={"30"} width={"30"}></img>
-          </Link></li>
-          {/* <li><Link to = '/cart'>Cart</Link></li> */}
+          </Link></li> 
+          {/* /* <li><Link to = '/cart'>Cart</Link></li> */}
           <button
             onClick={() => {
               const status = btnNameReact == "Login" ? "Logout" : "Login";
